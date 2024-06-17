@@ -20,6 +20,7 @@ public class Prodotto {
 		this.productCode = randomCode.nextInt(maxValue - minValue) + minValue;
 		this.productName = productName;
 		this.ProductDescription = ProductDescription;
+		this.productPrice = productPrice;
 		this.vat = vat;
 	}
 	

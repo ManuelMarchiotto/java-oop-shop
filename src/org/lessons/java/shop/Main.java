@@ -7,7 +7,7 @@ public class Main {
 
 		Prodotto prodotto1 = new Prodotto("prod1", "desc1", 800 ,22);
 		System.out.println("___________________________");
-		System.out.println(prodotto1.productPrice);
+//		System.out.println(prodotto1.productPrice);
 		System.out.println(prodotto1.price());
 		System.out.println(prodotto1.priceAndCurrency());
 		System.out.println(prodotto1.vatPrice());
