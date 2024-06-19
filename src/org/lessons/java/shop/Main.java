@@ -1,30 +1,43 @@
 package org.lessons.java.shop;
 
-public class Main {
+import java.util.Scanner;
 
+public class Main {
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
+		
+		// Create a Scanner object	
+		Scanner scanner = new Scanner(System.in); 
+		
+		String userProdName;
+		String userProdInfo;
+		int userProdPrice;
+		int userProdIva;
+		
+		
+		 
+		
+	    System.out.println("Enter the product name");
+	    userProdName = scanner.nextLine();
+	    System.out.println("Enter the product detils");
+	    userProdInfo = scanner.nextLine();
+	    System.out.println("Enter the product Price");
+	    userProdPrice = scanner.nextInt();
+	    System.out.println("Enter the product IVA");
+	    userProdIva = scanner.nextInt();
 
-		Prodotto prodotto1 = new Prodotto("prod1", "desc1", 800 ,22);
-		System.out.println("___________________________");
-//		System.out.println(prodotto1.productPrice);
-		System.out.println(prodotto1.price());
-		System.out.println(prodotto1.priceAndCurrency());
-		System.out.println(prodotto1.vatPrice());
-		System.out.println(prodotto1.vatPriceAndCurrency());
-		System.out.println(prodotto1.fullName());
-		System.out.println("___________________________");
+		Prodotto userProd = new Prodotto(userProdName, userProdInfo, userProdPrice, userProdIva);
 		
-		
-		System.out.println("___________________________");
-		Prodotto prodotto2 = new Prodotto("prod2", "desc2", 128 ,22);
-		System.out.println(prodotto2.productPrice);
-		System.out.println(prodotto2.price());
-		System.out.println(prodotto2.priceAndCurrency());
-		System.out.println(prodotto2.vatPrice());
-		System.out.println(prodotto2.vatPriceAndCurrency());
-		System.out.println(prodotto2.fullName());
-		System.out.println("___________________________");
+		System.out.println("--------------------------------------");
+		System.out.println(userProd.getProductName());
+		System.out.println(userProd.getProductDescription());
+		System.out.println(userProd.getPrice());
+		System.out.println(userProd.vatPriceAndCurrency());
+		System.out.println(userProd.fullName());
 	}
+
+	
 
 }

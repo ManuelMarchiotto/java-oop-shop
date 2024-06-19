@@ -5,33 +5,69 @@ import java.util.Random;
 public class Prodotto {
 
 	
-	protected int productCode;
-	String productName;
-	String ProductDescription;
-	int productPrice;
-	int vat;
+	private static int productCode;
+	private String productName;
+	private String productDescription;
+	private int productPrice;
+	private int vat;
 	
-	public Prodotto(String productName, String ProductDescription, int productPrice, int vat) {
+	public Prodotto(String productName, String productDescription, int productPrice, int vat) {
 		
-		int minValue = 111111;
+		int minValue = 0;
 		int maxValue = 999999;
 		Random randomCode = new Random();
 		
 		this.productCode = randomCode.nextInt(maxValue - minValue) + minValue;
 		this.productName = productName;
-		this.ProductDescription = ProductDescription;
+		this.productDescription = productDescription;
 		this.productPrice = productPrice;
 		this.vat = vat;
+		
 	}
 	
-	public int price() {
+								
+	//--------------get method---------------------------
+	
+	public String getProductName() {
+		return productName;
+	}
+	
+	public String getProductDescription() {
+		return productDescription;
+	}
+	
+	public int getPrice() {
 		return productPrice;
 	}
 	
-	public String priceAndCurrency() {
-		String priceAndCurrency = productPrice + "€";
-		return priceAndCurrency;
+	public int getVat() {
+		return vat;
 	}
+	
+	//------------------------------------------------------------------
+	
+	//--------------set method---------------------------
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+	
+	public void setProductDescription(String productDescription) {
+		this.productDescription = productDescription;
+	}
+	
+	public void setVat(int vat) {
+		this.vat = vat;
+	}
+	public void setPriceAndCurrency(int priceAndCurrency ) {
+		this.productPrice = priceAndCurrency;
+	}
+	
+	public void setPrice(int productPrice) {
+		this.productPrice = productPrice;
+	}
+	
+	//------------------------------------------------------------------
+	
 	
 	public int vatPrice() {
 		int vatPrice = (productPrice + (productPrice * vat) / 100);
@@ -47,4 +83,7 @@ public class Prodotto {
 		String fullNameString = productCode + "-" + productName;
 		return fullNameString;
 	}
+	
+
+
 }
